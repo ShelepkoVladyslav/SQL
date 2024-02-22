@@ -1,3 +1,12 @@
+-- JOINING AND UNIONING GOOGLE AND FACEBOOK TABLES
+
+-- We have four different tables: 1 relates to google's campaigns and other 3 to facebook's campaigns
+-- 1-Step Joining tables related to the facebook into one table
+-- 2-Step Unioning the facebook data and google data
+-- 3-Step Calculating spends of campaigns, impressions, clicks and average conversion rate
+-- RESULT: We have data of google and facebook campaigns in the solid dataset that contains 
+--         metrics about spends of campaigns, impressions, clicks and average conversion rate
+
 with fb_joined as (
 select ad_date, campaign_name, adset_name, spend, impressions, reach, clicks, leads, value 
 from facebook_ads_basic_daily fabd
