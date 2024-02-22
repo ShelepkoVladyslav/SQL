@@ -1,3 +1,18 @@
+-- JOINING, UNIONING AND AGGREGATING GOOGLE AND FACEBOOK DATA ON LEVEL OF THE CAMPAIGNS
+-- WITH DIFFERENCE OF CTR,CPM,ROMI TO THE PREVIOUS MONTH
+
+-- We have four different tables: 1 relates to google's campaigns and other 3 to facebook's campaigns
+-- 1-Step Joining and unioning tables related to the facebook and google into one table
+-- 2-Step Extraction the piece of utm_campaign from url_parameters
+-- 3-Step Aggregation of spends of campaigns, impressions, clicks and average conversion rate
+-- 4-Step Aggregation of CPC,CPM,CTR,ROMI 
+-- 5-Step Result of CTR,CPM,ROMI in percentages to the previous month using window function LAG
+-- RESULT: We have data of google and facebook campaigns in the solid dataset that contains 
+--         metrics about spends of campaigns, impressions, clicks and average conversion rate
+--         that are grouped by utm_campaign name with CPC,CPM,CTR,ROMI for each campaign and 
+--         results of CTR,CPM,ROMI in percentages to the previous month
+
+
 with j_ads_basic_daily as (
 select ad_date, adset_name, campaign_name, url_parameters, spend, impressions, reach, clicks, leads, value
 from facebook_ads_basic_daily fabd 
