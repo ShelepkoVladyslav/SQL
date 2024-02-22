@@ -1,3 +1,11 @@
+-- CALCULATING CPC,CPM,CTR,ROMI
+
+-- 1-Step is to find these metrics: sum_spend, impressions, clicks, avg_value
+-- 2-Step is aggregation of CPC,CPM,CTR,ROMI basing on metrics 
+--        that have been found at first step
+
+-- Query:
+
 select ad_date, adset_id,
 sum(spend) as sum_spend,
 sum (impressions) as impressions_, 
